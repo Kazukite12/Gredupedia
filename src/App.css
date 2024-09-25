@@ -235,10 +235,12 @@ padding: 10px;
   animation: scrollUp 20s linear infinite;
   animation-play-state: paused !important;
   filter: grayscale(100%);
+  overflow: hidden;
 }
 
 .card-wrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .card-description {
