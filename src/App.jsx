@@ -11,6 +11,10 @@ import 'swiper/css/pagination'
 import theme1 from './assets/theme-1.jpg'
 import Slider from 'react-slick'
 import CenterMode from './components/slider'
+import { MdPlace } from "react-icons/md";
+import Gredu3 from "./assets/Gredu3.jpg"
+import Gredu4 from "./assets/Gredu4.jpg"
+import "./util.css"
 
 function App() {
 
@@ -172,11 +176,29 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
         <div className='content-container'>
           <div className='vertical-slider'>
 
-              <div class="about-card card1">Card 1</div>
-              <div class="about-card card2">Card 2</div>
-              <div class="about-card card3">Card 3</div>
-              <div class="about-card card4">Card 4</div>
-              <div class="about-card card5">Card 5</div>
+              <div class="about-card card1">
+              <div className='card-wrapper'>
+                    <img src={Gredu4}/>
+                <div className='card-description'>
+                    <p>Gredupedia #4</p>
+                    <p>2024</p>
+                </div>
+                
+                </div>
+              </div>
+              <div class="about-card card2">
+                <div className='card-wrapper'>
+                    <img src={Gredu4}/>
+                <div className='card-description'>
+                    <p>Gredupedia #4</p>
+                    <p>2024</p>
+                </div>
+
+                </div>
+              </div>
+              <div class="about-card card3"><img src={Gredu3}/></div>
+              <div class="about-card card4"><img src={Gredu3}/></div>
+              <div class="about-card card5"><img src={Gredu3}/></div>
 
             </div>
         
@@ -185,6 +207,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
           <div className='about-content'>
               <h2>Tentang</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sapiente pariatur maxime nam omnis eveniet ea debitis alias dolor et, hic impedit. Reprehenderit molestias temporibus harum rerum? Voluptates, nobis error quos adipisci mollitia earum est asperiores quas natus laboriosam necessitatibus velit consectetur doloremque sint illum nulla qui reiciendis repudiandae! A!</p>
+            
           </div>
         </div>
 
