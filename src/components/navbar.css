@@ -1,0 +1,65 @@
+/* Navbar styles */
+.nav-bar {
+    position: fixed; /* Make it stick at the top */
+    top: 0; /* Stick to the top */
+    display: flex;
+    color: white;
+    background: transparent;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    justify-content: center;
+    padding: 25px 0;
+    z-index: 4; /* Ensure the navbar is above the background image */
+  }
+
+  .nav-link .social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    gap: 20px
+    ;
+  }
+  
+  
+  .nav-bar-sticky {
+    position: fixed; /* Make it stick at the top */
+    top: 0; /* Stick to the top */
+    display: flex;
+    color: white;
+    background: rgba( 0, 0, 0, 0.55 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    justify-content: center;
+    padding: 25px 0;
+    z-index: 4; /* Ensure the navbar is above the background image */
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: space-between;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  
+  }
+  .title img {
+    width: 20%;
+  }
+  .nav-link {
+    display: flex;
+    width: 60%;
+    gap: 50px;
+    justify-content: end;
+    font-weight: 300;
+  }
+  
