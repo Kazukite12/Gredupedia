@@ -19,10 +19,20 @@ import tema5 from "../assets/assetTema/5.jpg"
 import tema6 from "../assets/assetTema/6.jpg"
 import Footer from '../components/footer';
 
-import { FaMapLocationDot } from "react-icons/fa6";
-import Navbar from '../components/navbar';
+import Aos from 'aos';
+
+import 'aos/dist/aos.css'
+
+import { IoIosArrowDown } from "react-icons/io";
 
 function Main() {
+
+  useEffect(()=> {
+    Aos.init({duration:500,
+      delay:100,
+      anchorPlacement:"center-center"
+    })
+  },[])
 
   const [slideIndex,setSlideIndex] = useState(0)
 
@@ -145,7 +155,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
             <div className='content-head'>
             <h1>GREDUPEDIA</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lectus nibh, aliquet eu neque ac, volutpat sodales risus. Pellentesque </p>
-            <button>Pelajari Lebih Lanjut</button>
+            <button className='main-button'>Pelajari Lebih Lanjut <IoIosArrowDown/></button>
             </div>
 
             <div className='content-hero'>
@@ -180,21 +190,19 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
 
                 </div>
               </div>
-              <div class="about-card card3"><img src={Gredu3}/></div>
-              <div class="about-card card4"><img src={Gredu3}/></div>
-              <div class="about-card card5"><img src={Gredu3}/></div>
+              <div class="about-card card3"></div>
+              <div class="about-card card4"></div>
+              <div class="about-card card5"></div>
 
             </div>
         
         
         
           <div className='about-content'>
-              <h2>Tentang</h2>
-              <p>Pameran Gredupedia kembali hadir dengan semangat baru. Diselenggarakan oleh mahasiswa Teknologi Pendidikan Universitas Negeri Yogyakarta, Gredupedia#5 mengangkat enam tema, dengan lebih dari 300 karya kreatif.
-              Tidak hanya sekadar pameran, Gredupedia#5 adalah ruang bagi pengunjung untuk menjelajahi inovasi terkini, berinteraksi dengan teknologi, dan memahami arah masa depan pendidikan yang menghubungkan teknologi, kreativitas, dan pembelajaran.
+              <h1 data-aos="fade-right">Tentang</h1>
+              <p data-aos="fade-right"> Gredupedia#5 adalah ruang bagi pengunjung untuk menjelajahi inovasi terkini, berinteraksi dengan teknologi, dan memahami arah masa depan pendidikan yang menghubungkan teknologi, kreativitas, dan pembelajaran.
 </p>
 
-<FaMapLocationDot/> Taman Budaya Yogyakarta
             
           </div>
         </div>

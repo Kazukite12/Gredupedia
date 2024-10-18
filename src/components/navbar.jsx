@@ -7,10 +7,14 @@ import { HashLink, NavHashLink } from "react-router-hash-link";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaTiktok } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import { HiXMark } from "react-icons/hi2";
 
 const Navbar =()=> {
 
     const [sticky, setSticky] = useState(false)
+    
+
+    const [activePanel, setActivePanel] = useState(false)
 
     const handleScroll = () => {
       if (window.scrollY > 1) {
@@ -30,7 +34,7 @@ const Navbar =()=> {
       
   
     return (
-
+        <>
         <div className={sticky?"nav-bar-sticky":"nav-bar"}>
         <div className='nav-container'>
               <div className='title'>
@@ -68,16 +72,17 @@ const Navbar =()=> {
 
                 <div className="social-media">
 
-                  <RiInstagramFill/>
+                <a target='_blank'rel='noopener noreferrer' href="https://www.instagram.com/gredupedia.id/"><RiInstagramFill/>
+                </a>
+                <a target="_blank" href="https://www.tiktok.com/@gredupedia.id">
                   <FaTiktok/> 
+                </a>
+                  <a target="_blank" href="https://www.facebook.com/gredupedia.pameran?locale=hy_AM">
                   <FaFacebook/>
+                  </a>
                 </div>
-
-
-                
-
               </div>
-              <div className='burger-nav'>
+              <div onClick={()=>setActivePanel(true)} className='burger-nav'>
                 <div></div>
                 <div></div>
                 <div></div>
@@ -85,6 +90,33 @@ const Navbar =()=> {
         </div>
               
             </div>
+
+
+            <div className={activePanel?"burger-panel-active":"burger-panel"}>
+              <div className="x">
+                <HiXMark onClick={()=>setActivePanel(false)}/>
+              
+              </div>
+              <div className="panel-link">
+                <p>About Us</p>
+                <p>Sponsors</p>
+                <p>FAQ</p>
+                <p>Gallery</p>
+              </div>
+              <div className="panel-social-media">
+              <a target='_blank'rel='noopener noreferrer' href="https://www.instagram.com/gredupedia.id/">
+
+                  <RiInstagramFill/>
+            </a>
+                  <FaTiktok/> 
+                  <FaFacebook/>
+              </div>
+
+            </div>
+
+
+           
+            </>
     )
 }
 

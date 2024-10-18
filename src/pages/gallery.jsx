@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Gallery.css"
 import ProductCategory from "../dataDummy/productCategory";
+import Product from "../dataDummy/product";
 
 const Gallery =()=> {
     const [selectedCategory, setSelectedCategory] = useState(null)
@@ -17,15 +18,11 @@ const Gallery =()=> {
             </div>
 
             <div className="product-container">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                {Product.map((item,i)=> {
+                    return (
+                        <div></div>
+                    )
+                })}
             </div>
                 <div></div>
         </div>

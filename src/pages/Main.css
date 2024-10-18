@@ -53,6 +53,19 @@
   bottom: 0;
 }
 
+.main-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.main-button:hover{
+  background: #7C1926;
+}
+
 .home-content {
   padding: 50px 100px;
   display: flex;
@@ -104,6 +117,9 @@ padding: 10px;
   background: black;
   position: relative;
   color: white;
+  display: flex;
+
+  justify-content: center;
 }
 
 #about-container::before {
@@ -115,14 +131,13 @@ padding: 10px;
   height: 100vh;
 
   /* Apply the background image */
-  background: url("../assets/about-background.png");
 
-  background-size:cover;
+  background-size:100%;
   background-repeat: no-repeat;
   background-position: center;
   
   /* Set the image opacity to 15% */
-  opacity: 0.15;
+  opacity: 0.1;
 
   /* Ensure it sits in front of the gradient but behind the content */
   z-index: 0; /* Set this to 0 so content is on top */
@@ -152,7 +167,7 @@ padding: 10px;
 
 
 .content-container {
-  width: 100%;
+  width: 80%;
   height: 100%;
   position: relative;
   z-index: 2;
@@ -258,6 +273,7 @@ padding: 10px;
 .about-content {
   width: 40%;
   padding-left: 50px;
+  text-align:left;
 }
 
 
@@ -411,7 +427,7 @@ padding: 10px;
   flex-direction: column;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   width: 50%;
 }
 
@@ -421,6 +437,7 @@ padding: 10px;
 
 .project-card-container {
   width: 50%;
+  background: t;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -483,9 +500,9 @@ padding: 10px;
 
 
 #sponsors-container {
-  background: #9E2333;
   width: 100vw;
   height: 100vh;
+  background: linear-gradient(180deg, #6C101C 0%, #000 100%);
   display: flex;
   align-items: center;
   position: relative;
@@ -494,6 +511,29 @@ padding: 10px;
   flex-direction: column;
   justify-content: center;
 }
+
+#sponsors-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* Apply the background image */
+  background-image: url("../assets//about-background.png");
+
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* Set the image opacity to 15% */
+  opacity: 0.1;
+
+  /* Ensure it sits in front of the gradient but behind the content */
+  z-index: 0; /* Set this to 0 so content is on top */
+}
+
 .sponsors-wrapper {
   display: flex;
   flex-direction: column;
@@ -501,6 +541,8 @@ padding: 10px;
   justify-content: center;
 
   gap: 20px;
+  position: relative;
+  z-index: 5;
 }
 
 .media-wrapper {
@@ -562,6 +604,11 @@ padding: 10px;
   justify-content: space-between;
   padding: 15px;
 
+}
+
+.accordion .title:hover {
+  background: #9E2333;
+  transition: 0.2s;
 }
 
 .selected {
@@ -802,7 +849,7 @@ padding: 10px;
 
 .theme-description {
   display: flex;
-  height: 60%;
+  height: 30%;
 }
 
 .description-text {
@@ -911,6 +958,16 @@ padding: 10px;
   width: 100%;
   border-radius: 15px;
   height: 45%;
+}
+
+
+.accordion-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 70%;
+  margin-top: 50px;
 }
 
 

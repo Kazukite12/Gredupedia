@@ -18,7 +18,7 @@ const ProductCategory = [
         category:"Short Movie",
     },
     {
-        category:"Augmented Reaility",
+        category:"Augmented Reality",
     },
     {
         category:"Games",
@@ -26,6 +26,10 @@ const ProductCategory = [
     {
         category:"Poster/Infografis",
     },
+    {
+        category:"APE",
+    },
+    
 ]
 
 export default ProductCategory
