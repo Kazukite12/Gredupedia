@@ -19,11 +19,22 @@ import tema5 from "../assets/assetTema/5.jpg"
 import tema6 from "../assets/assetTema/6.jpg"
 import Footer from '../components/footer';
 
+import about1 from "../assets/foto-about-1.jpg"
+import about2 from "../assets/foto-about-2.png"
+import about3 from "../assets/foto-about-3.png"
+import about4 from "../assets/foto-about-4.png"
+import about6 from "../assets/foto-about-6.png"
+
 import Aos from 'aos';
 
 import 'aos/dist/aos.css'
 
 import { IoIosArrowDown } from "react-icons/io";
+
+import { FaLocationDot } from "react-icons/fa6";
+import { BsCalendar2DateFill } from "react-icons/bs";
+import { IoPricetags } from "react-icons/io5";
+import { HashLink } from 'react-router-hash-link';
 
 function Main() {
 
@@ -113,7 +124,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
           slidesToShow: 3,
           slidesToScroll: 3,
           initialSlide: 3,
-          centerPadding: "3px",
+          centerPadding: "0px",
           centerMode:true,
         }
       },
@@ -122,7 +133,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          centerPadding: "3px",
+          centerPadding: "0px",
           centerMode:true
         }
       }
@@ -155,7 +166,10 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
             <div className='content-head'>
             <h1>GREDUPEDIA</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lectus nibh, aliquet eu neque ac, volutpat sodales risus. Pellentesque </p>
+            <HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })} to="#about-container">
+
             <button className='main-button'>Pelajari Lebih Lanjut <IoIosArrowDown/></button>
+            </HashLink>
             </div>
 
             <div className='content-hero'>
@@ -172,36 +186,69 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
 
               <div class="about-card card1">
               <div className='card-wrapper'>
-                    <img src={Gredu4}/>
-                <div className='card-description'>
+                    <img src={about1} alt='gambar-gredupedia 5-1'/>
+                {/* <div className='card-description'>
                     <p>Gredupedia #4</p>
                     <p>2024</p>
                 </div>
-                
+                 */}
                 </div>
               </div>
               <div class="about-card card2">
                 <div className='card-wrapper'>
-                    <img src={Gredu4}/>
-                <div className='card-description'>
+                    <img src={about2} alt='gambar-gredupedia 5-2'/>
+                {/* <div className='card-description'>
                     <p>Gredupedia #4</p>
                     <p>2024</p>
-                </div>
+                </div> */}
 
                 </div>
               </div>
-              <div class="about-card card3"></div>
-              <div class="about-card card4"></div>
-              <div class="about-card card5"></div>
+              <div class="about-card card3">
+              <img src={about3} alt='gambar-gredupedia 5-pengenalan karakter Nala'/>
+              </div>
+              <div class="about-card card4">
+              <img src={about4} alt='gambar-gredupedia 5-pengenalan karakter Kuda Sembrani'/>
+              </div>
+              <div class="about-card card5">
+              <img src={about6} alt='gambar-gredupedia 5-tentang budaya jawa'/>
+              </div>
 
             </div>
         
         
         
           <div className='about-content'>
-              <h1 data-aos="fade-right">Tentang</h1>
-              <p data-aos="fade-right"> Gredupedia#5 adalah ruang bagi pengunjung untuk menjelajahi inovasi terkini, berinteraksi dengan teknologi, dan memahami arah masa depan pendidikan yang menghubungkan teknologi, kreativitas, dan pembelajaran.
+            <div className='content-wrapper'>
+              <h1 data-aos="fade-right">Apa itu <span >Gredupedia?</span></h1>
+              <p data-aos="fade-right"> Gredupedia adalah sebuah pameran yang diselenggarakan oleh mahasiswa Teknologi Pendidikan Universitas Negeri Yogyakarta (UNY). Pameran ini menampilkan berbagai karya media pembelajaran yang inovatif dan kreatif</p>
+
+
+            </div>
+            <br></br>
+            <div className='content-wrapper'>
+              <h1 className='gredupedia-5' data-aos="fade-right">Gredupedia 5</h1>
+              <p data-aos="fade-right"> Memasuki tahun ke-5 penyelanggaraan, Gredupedia Kembali hadir sebagai wadah eksplorasi 
+mahasiswa serta kontribusinya untuk dunia Pendidikan Indonesia. Kali ini, Gredupedia 
+Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembrani" kita akan ditemani Nala dan Kuda Sembrani dalam perjalanannya berkelana untuk memahami dan mengenal tentang Pendidikan Budaya Jawa
 </p>
+
+            </div>
+
+            <div className='information-container'>
+                  <div className='information-wrapper' data-aos="fade-right">
+                    <FaLocationDot className='information-icon'/>
+                    <p>Gredupedia tahun ke-5 akan berlokasi di <span style={{fontWeight:'700'}}>Taman Budaya Yogyakarta</span></p>
+                  </div>
+                  <div className='information-wrapper' data-aos="fade-right">
+                    <BsCalendar2DateFill className='information-icon'/>
+                  <p>Diselenggarakan pada tanggal <span style={{fontWeight:'700'}}> 19 - 21 Desember 2024</span></p>
+                  </div>
+                  <div className='information-wrapper' data-aos="fade-right">
+                    <IoPricetags className='information-icon'/>
+                    <p>Terbuka untuk Umum dan <span style={{fontWeight:'700'}}>Gratis!</span></p>
+                  </div>
+            </div>
 
             
           </div>
@@ -212,7 +259,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
 
 
       <div className='theme-container'>
-      <div style={{top:0,transform:"scaleY(-1)",height:'10%'}} className='shadow-overlay'></div>
+      <div style={{top:0,transform:"scaleY(-1)",height:'15%'}} className='shadow-overlay'></div>
 
       {filteredThemeData.map((item)=>{
         return (
@@ -264,7 +311,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
                 <h1><span>300+</span> PRODUK KARYA</h1>
                 <p>dari para Teknolog Pendidikan</p>
                 <br></br>
-                <button>Pelajari Lebih Lanjut</button>
+                <button className='main-button'>Pelajari Lebih Lanjut</button>
               </div>
 
 
@@ -293,7 +340,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
       </div>
 
       <div id='sponsors-container'>
-      <div style={{top:0,height:'10%',transform:"scaleY(-1)"}} className='shadow-overlay'></div>
+      <div style={{top:0,height:'15%',transform:"scaleY(-1)"}} className='shadow-overlay'></div>
             <div className='sponsors-wrapper'>
                 <h1>SPONSORS</h1>
                 <div className='sponsors-card'>

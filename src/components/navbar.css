@@ -37,7 +37,7 @@
     width: 100%;
     justify-content: center;
     padding: 25px 0;
-    z-index: 4; /* Ensure the navbar is above the background image */
+    z-index: 99; /* Ensure the navbar is above the background image */
   }
   
   .nav-container {
@@ -118,7 +118,7 @@
       width: 100%;
       justify-content: center;
       padding: 25px 0;
-      z-index: 4; /* Ensure the navbar is above the background image */
+  
     }
     
     .nav-container {
@@ -201,7 +201,7 @@
         
         display: flex;
         flex-direction: column;
-        font-size: 32px;
+        font-size: 24px;
         gap:30px;
         align-items: center;
         transition: left 0.3s ease-in-out; /* Smooth animation */
@@ -223,7 +223,7 @@
         
         display: flex;
         flex-direction: column;
-        font-size: 32px;
+        font-size: 24px;
         gap:30px;
         align-items: center;
       }

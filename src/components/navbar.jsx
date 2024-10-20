@@ -98,10 +98,33 @@ const Navbar =()=> {
               
               </div>
               <div className="panel-link">
-                <p>About Us</p>
-                <p>Sponsors</p>
-                <p>FAQ</p>
-                <p>Gallery</p>
+              <NavHashLink 
+                  to="/#about-container" 
+                  onClick={()=>setActivePanel(false)}
+                  scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+              >
+              <p>About Us</p>
+              </NavHashLink>
+                <NavHashLink 
+                  to="/#sponsors-container" 
+                  onClick={()=>setActivePanel(false)}
+                  scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                
+                >
+                  <p>Sponsors</p>
+                </NavHashLink>
+
+                <NavHashLink 
+                  to="/#faq-container" 
+                  onClick={()=>setActivePanel(false)}
+                  scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                
+                >
+                  <p>FAQ</p>
+                </NavHashLink>
+                <NavLink to="/Gallery" onClick={()=>setActivePanel(false)}>
+                    <p>Gallery</p>
+                </NavLink>
               </div>
               <div className="panel-social-media">
               <a target='_blank'rel='noopener noreferrer' href="https://www.instagram.com/gredupedia.id/">
