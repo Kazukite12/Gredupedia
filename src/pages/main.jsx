@@ -11,12 +11,12 @@ import Slider from 'react-slick'
 import Gredu3 from "../assets/Gredu3.jpg"
 import Gredu4 from "../assets/Gredu4.jpg"
 import "../util.css"
-import tema1 from "../assets/assetTema/1.jpg"
-import tema2 from "../assets/assetTema/2.jpg"
-import tema3 from "../assets/assetTema/3.jpg"
-import tema4 from "../assets/assetTema/4.jpg"
-import tema5 from "../assets/assetTema/5.jpg"
-import tema6 from "../assets/assetTema/6.jpg"
+import tema1 from "../assets/assetTema/masa-1.png"
+import tema2 from "../assets/assetTema/masa-2.jpg"
+import tema3 from "../assets/assetTema/masa-3.png"
+import tema4 from "../assets/assetTema/masa-4.png"
+import tema5 from "../assets/assetTema/masa-5.png"
+import tema6 from "../assets/assetTema/masa-6.png"
 import Footer from '../components/footer';
 
 import about1 from "../assets/foto-about-1.jpg"
@@ -63,37 +63,43 @@ function Main() {
         no:"01",
         tema:"Nenek Moyangku Juga Sekolah",
         description:"Lorem Ipsum dolor sit amet, consecteur adipiscing elit",
-        img:tema1
+        img:tema1,
+        bottom:"-200px"
     },
     {
         no:"02",
         tema:"Ini Warisan Dari Nenek Nala",
         description:"Lorem Ipsum dolor sit amet, consecteur adipiscing elit",
-        img:tema2
+        img:tema2,
+         bottom:"-60px"
     },
     {
         no:"03",
         tema:"Sekarang TV, Dulu Wayang",
         description:"Lorem Ipsum dolor sit amet, consecteur adipiscing elit",
-        img:tema3
+        img:tema3,
+         bottom:"-200px"
     },
     {
         no:"04",
         tema:"Nala Mau Jadi Kartini",
         description:"Lorem Ipsum dolor sit amet, consecteur adipiscing elit",
-        img:tema4
+        img:tema4,
+           bottom:"-350px"
     },
     {
         no:"05",
         tema:"Cerita Nala di Sekolah",
         description:"Lorem Ipsum dolor sit amet, consecteur adipiscing elit",
-        img:tema5
+        img:tema5,
+         bottom:"-600px"
     },
     {
         no:"06",
         tema:"Oh.... Medianya Lebih Moderen",
         description:"Lorem Ipsum dolor sit amet, consecteur adipiscing elit",
-        img:tema6
+        img:tema6,
+         bottom:"0px"
     },
 ]
 
@@ -263,7 +269,7 @@ Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembran
 
       {filteredThemeData.map((item)=>{
         return (
-          <img className='img-background' src={item.img}/>
+          <img className='img-background' style={{bottom:item.bottom}} src={item.img}/>
         )
       })}
       <div className='theme-content'>

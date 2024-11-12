@@ -3,18 +3,20 @@ import Main from "./pages/main"
 import Gallery from "./pages/gallery"
 import Navbar from "./components/navbar"
 import Login from "./pages/login"
+import Detail from "./pages/detail"
 
 function App() {
 
   return (
     <BrowserRouter>
     <Routes>
-    <Route path="/Login" element={<Login/>} />
+    <Route path="/login" element={<Login/>} />
     </Routes>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Main/>} />
-        <Route path="/Gallery" element={<Gallery/>} />
+        <Route path="/gallery" element={<Gallery/>} />
+        <Route path="/gallery/detail" element={<Detail/>} />
        
       </Routes>
     </BrowserRouter>

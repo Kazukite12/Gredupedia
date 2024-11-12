@@ -8,6 +8,7 @@
     position: relative;
     padding-top: 110px;
     flex-direction: column;
+    padding-bottom: 20px;
 }
 
 .gallery-nav {
@@ -60,6 +61,7 @@
 
 .side-bar p {
     cursor: pointer;
+    font-size: 14px;
 }
 
 .product-container-image-mode {
@@ -103,7 +105,7 @@
   height: 100%;
 }
 
-.product-wrapper {
+.product-list-mode-content {
   height: 150px;
   width: 95%;
   margin-bottom: 15px;
@@ -116,24 +118,44 @@
   padding: 10px;
 }
 
-.product-wrapper:hover {
+.product-list-mode-content:hover {
   background: #9E2333;
 }
 
-.product-wrapper .product-image {
+.product-list-mode-content .product-image {
   width: 150px;
   height: 150px;
   background: grey;
 }
 
-.active-category {
-    color:white;
-
-    border-bottom: 4px solid #9E2333;
-    
+.category-item {
+  position: relative;
+  color: white;
+  cursor: pointer;
+  padding-bottom: 5px; /* Adds some space between text and underline */
 }
 
+/* Underline effect using ::after */
+.category-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color:#9E2333;
+  transition: width 0.3s ease;
+}
 
+/* Underline expands on hover */
+.category-item:hover::after {
+  width: 100%;
+}
+
+/* Active category underline */
+.active-category::after {
+  width: 100%;
+}
 /*animation */
 /* Keyframes for the ease-up animation */
 @keyframes easeUp {
@@ -155,6 +177,12 @@
 }
 
 @media (max-width:480px) {
+
+  #gallery {
+    width: 100vw;
+    height: 85vh;
+    background: tan;
+}
 
   .gallery-nav {
     width: 80%;

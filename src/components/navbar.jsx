@@ -9,6 +9,8 @@ import { FaTiktok } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { HiXMark } from "react-icons/hi2";
 
+import { ScrollRestoration } from "react-router-dom";
+
 const Navbar =()=> {
 
     const [sticky, setSticky] = useState(false)
@@ -137,8 +139,6 @@ const Navbar =()=> {
 
             </div>
 
-
-           
             </>
     )
 }
