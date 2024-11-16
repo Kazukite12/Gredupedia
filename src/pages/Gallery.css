@@ -96,6 +96,7 @@
 
 .product-container-image-mode div {
     background: grey;
+    overflow: hidden;
     width: 140px;
     height: 140px;
 }

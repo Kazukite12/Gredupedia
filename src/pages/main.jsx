@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect, useRef } from 'react'
 import './Main.css'
 import { TiArrowSortedDown } from "react-icons/ti";
 import hero from '../assets/hero.png'
@@ -36,8 +36,23 @@ import { BsCalendar2DateFill } from "react-icons/bs";
 import { IoPricetags } from "react-icons/io5";
 import { HashLink } from 'react-router-hash-link';
 
+import mainLogo from "../assets/main-logo.png"
+
+import codemiLogo from "../assets/sponsorship/codemi_final.png"
+
+import { IoMdArrowDropleft } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
+
 function Main() {
 
+  let sliderRef = useRef(null);
+
+  const next =()=> {
+    sliderRef.slickNext()
+  }
+  const previous =()=> {
+    sliderRef.slickPrev()
+  }
   useEffect(()=> {
     Aos.init({duration:500,
       delay:100,
@@ -108,17 +123,16 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
   const settings = {
     dots:true,
     speed: 500,
-    infinite:true,
-    className: "center",
-    centerPadding: "260px",
     centerMode:true,
-    slidesToShow: 3,
-    slidesToScroll:3,
+    className:"center",
+    centerPadding:"5px",
+
+    slidesToShow: 5,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 3,
      
           dots: true
@@ -144,7 +158,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
         }
       }
     ],
-      
+  
     beforeChange:(current,next)=>setSlideIndex(next),
     appendDots: dots => (
       <div
@@ -161,24 +175,29 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
 
   return (
     <div id='main-container'>
+      <div id='trailer-container'>
+          <img className='trailer-logo' src={mainLogo}/>
+    
+      </div>
           
       <div id='home-container'>
+      <div style={{top:0,transform:"scaleY(-1)",height:'15%'}} className='shadow-overlay'></div>
   
        
           <div className='home-content'>
             
             
             
-            <div className='content-head'>
-            <h1>GREDUPEDIA</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lectus nibh, aliquet eu neque ac, volutpat sodales risus. Pellentesque </p>
+            <div data-aos="fade-up" className='content-head'>
+            <h1>Halo, Sobat Gredu!</h1>
+            <p>Yuk, siap-siap! Ikutan event pendidikan yang seru, kreatif, dan penuh inspirasi.</p>
             <HashLink scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })} to="#about-container">
 
             <button className='main-button'>Pelajari Lebih Lanjut <IoIosArrowDown/></button>
             </HashLink>
             </div>
 
-            <div className='content-hero'>
+            <div data-aos="fade-up" className='content-hero'>
               <img src={hero} />
 
             </div>
@@ -188,7 +207,7 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
 
       <div id='about-container'>
         <div className='content-container'>
-          <div className='vertical-slider'>
+          <div data-aos="fade-right" className='vertical-slider'>
 
               <div class="about-card card1">
               <div className='card-wrapper'>
@@ -241,21 +260,7 @@ Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembran
 
             </div>
 
-            <div className='information-container'>
-                  <div className='information-wrapper' data-aos="fade-right">
-                    <FaLocationDot className='information-icon'/>
-                    <p>Gredupedia tahun ke-5 akan berlokasi di <span style={{fontWeight:'700'}}>Taman Budaya Yogyakarta</span></p>
-                  </div>
-                  <div className='information-wrapper' data-aos="fade-right">
-                    <BsCalendar2DateFill className='information-icon'/>
-                  <p>Diselenggarakan pada tanggal <span style={{fontWeight:'700'}}> 19 - 21 Desember 2024</span></p>
-                  </div>
-                  <div className='information-wrapper' data-aos="fade-right">
-                    <IoPricetags className='information-icon'/>
-                    <p>Terbuka untuk Umum dan <span style={{fontWeight:'700'}}>Gratis!</span></p>
-                  </div>
-            </div>
-
+           
             
           </div>
         </div>
@@ -288,10 +293,12 @@ Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembran
            
           </div>
           <div className="theme-slider">
-            <Slider {...settings}>
+            <Slider ref={slider=>{
+              sliderRef = slider;
+            }} {...settings}>
             {themeData.map((item,index)=> {
               return (
-                <div key={index} className={index === slideIndex ? 'slider-card-active':'slider-card'}>
+                <div key={index} onClick={()=>setSlideIndex(index)} className={index === slideIndex ? 'slider-card-active':'slider-card'}>
                 
                   <img src={item.img}/>
               
@@ -302,6 +309,12 @@ Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembran
   
               
             </Slider>
+           
+      
+            <IoMdArrowDropright className='theme-next' onClick={next}/>
+            <IoMdArrowDropleft className='theme-previous' onClick={previous}/>
+          
+          
      
           </div>
       </div>
@@ -350,16 +363,20 @@ Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembran
             <div className='sponsors-wrapper'>
                 <h1>SPONSORS</h1>
                 <div className='sponsors-card'>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                    <div>
+
+                    <img src={codemiLogo}/>
+                    </div>
+           
+                
                 </div>
             </div>
             <div className='media-wrapper'>
               <h1>MEDIA PARTNER</h1>
               <div className='media-card'>
-                  <div></div>
+                  <div>
+
+                  </div>
                   <div></div>
                   <div></div>
                   <div></div>

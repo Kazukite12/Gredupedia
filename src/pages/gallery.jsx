@@ -5,6 +5,7 @@ import Product from "../dataDummy/product";
 
 import { MdViewList } from "react-icons/md";
 import { MdViewModule } from "react-icons/md";
+import MediaSlider from "../components/mediaSlider";
 
 const Gallery =()=> {
     const [selectedCategory, setSelectedCategory] = useState(null)
@@ -31,7 +32,6 @@ const Gallery =()=> {
         }
     }, [viewMode]);
 
-    console.log(scrollPosition)
 
     return (
         <div id="gallery">
@@ -50,7 +50,7 @@ const Gallery =()=> {
                 })}
                 
             </div>
-         
+       
           
 
             <div className={viewMode === "gallery" ? "product-container-image-mode" : "product-container-list-mode"} >

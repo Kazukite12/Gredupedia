@@ -47,13 +47,15 @@ const Navbar =()=> {
   
               </div>
               <div className='nav-link'>
-              <NavHashLink 
-                  to="/#about-container" 
-                  scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
-              >
-              <p>About Us</p>
-              </NavHashLink>
                 <NavHashLink 
+                className="nav-hash-link about-link"
+                    to="/#about-container" 
+                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                >
+                <p>About Us</p>
+                </NavHashLink>
+                <NavHashLink 
+                      className="nav-hash-link sponsors-link"
                   to="/#sponsors-container" 
                   scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
                 
@@ -62,17 +64,18 @@ const Navbar =()=> {
                 </NavHashLink>
 
                 <NavHashLink 
+                      className="nav-hash-link faq-link"
                   to="/#faq-container" 
                   scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                 
                 >
                   <p>FAQ</p>
                 </NavHashLink>
-                <NavLink to="/Gallery">
+                <NavLink       className="nav-hash-link gallery-link" to="/Gallery">
                     <p>Gallery</p>
                 </NavLink>
 
-                <div className="social-media">
+                <div className="social-media social-link">
 
                 <a target='_blank'rel='noopener noreferrer' href="https://www.instagram.com/gredupedia.id/"><RiInstagramFill/>
                 </a>
