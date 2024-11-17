@@ -22,12 +22,13 @@
 
 .detail-container {
     position: relative;
+    display: flex;
+    align-items: center ;
+    justify-content: center ;
     z-index: 2;
     height: 95%;
     width: 70%;
-    justify-content: space-between;
    
-    display: flex;
 }
 .detail-nav-container {
     background: #942738;
@@ -35,9 +36,8 @@
 }
 
 .detail-image-container {
-
     width: 50%;
-    height: 100%;
+    height: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,9 +49,57 @@
 
 .detail-description-container {
     width: 55%;
-    height: 100%;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 25px;
+}
+
+@media screen and (min-width:880px) and (max-width:1024px) {
+    #detail {
+    }
+
+    .detail-container {
+        width: 90%;
+    }
+}
+
+@media (max-width:879px) {
+    .detail-container {
+        
+        width: 95%;
+    }
+}
+
+@media (max-width:655px) {
+    #detail {
+        height: max-content;
+    }
+
+    .detail-container {
+        width: 80%;
+        flex-direction: column;
+        padding: 5px 20px 30px 20px;
+    }
+
+    .detail-image-container {
+        height: max-content;
+        width: 100%;
+    }
+
+    .detail-description-container {
+        height: 50%;
+        width: 90%;
+        text-align: justify;
+    }
+}
+
+
+@media (max-width:480px) {
+    .detail-container {
+        width: 100%;
+         flex-direction: column;
+         padding: 5px 10px 30px 10px;
+    }
 }

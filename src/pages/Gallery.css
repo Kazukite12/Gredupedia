@@ -12,10 +12,14 @@
 }
 
 .gallery-nav {
-  width: 750px;
+  width: 68vw;
   display: flex;
   justify-content: end;
   padding: 15px 0;
+}
+
+.filter-icon {
+  display: none;
 }
 
 .gallery-nav .view-option {
@@ -40,7 +44,7 @@
 }
 
 .gallery-container {
-    width: 900px;
+    width: 78vw;
     height: 90%;
     position: relative;
     display: flex;
@@ -62,6 +66,46 @@
 .side-bar p {
     cursor: pointer;
     font-size: 14px;
+}
+
+.filter-panel {
+  visibility: hidden;
+  width:max-content;
+  padding: 15px;
+  height: 100vh;
+  position: fixed;
+  background: rgba( 0, 0, 0, 0.8 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  color: white;
+  bottom: 0;
+  z-index: 15;
+  left: 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  transition: left 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.filter-exit {
+  width: 100%;
+  margin: 25px 25px 0 25px;
+}
+
+.filter-panel-container {
+  margin: 20px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.close {
+  visibility: none;
+  left: -1500px !important;
+  transition: left 0.3s ease-in-out; /* Smooth animation */
 }
 
 .product-container-image-mode {
@@ -177,16 +221,75 @@
   transition: all 0.2s ease-in-out;
 }
 
+@media screen and (min-width:880px) and (max-width:1024px){
+
+  .gallery-nav {
+    width: 80vw;
+  }
+
+  .gallery-container {
+    width: 90vw;
+    padding: 0 !important;
+    justify-content:center;
+    gap: 10px;
+    align-items: center !important;
+  }
+
+  .side-bar {
+
+  }
+
+  .product-container-image-mode {
+    margin: 0 !important;
+  width: 100% !important;
+  justify-content: center ;
+  }
+}
+
+@media (max-width:879px) {
+  #gallery{
+  }
+
+  .gallery-nav {
+    width: 75vw;
+  }
+
+
+  .gallery-container {
+    width: 95vw;
+  }
+
+  .product-container-image-mode {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
 @media (max-width:480px) {
 
   #gallery {
     width: 100vw;
     height: 85vh;
-    background: tan;
+}
+
+.filter-panel {
+  visibility: visible;
+
+}
+
+
+.close {
+  visibility: visible;
+}
+.filter-icon {
+  display: block;
 }
 
   .gallery-nav {
     width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .side-bar {

@@ -132,8 +132,8 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
+          slidesToShow: 5,
+          slidesToScroll: 5,
      
           dots: true
         }
@@ -245,14 +245,14 @@ const filteredThemeData = themeData.filter((item, index) => index === slideIndex
         
           <div className='about-content'>
             <div className='content-wrapper'>
-              <h1 data-aos="fade-right">Apa itu <span >Gredupedia?</span></h1>
+              <h1 data-aos="fade-right">Apa itu <span style={{color:"#F28F00"}} >Gredupedia?</span></h1>
               <p data-aos="fade-right"> Gredupedia adalah sebuah pameran yang diselenggarakan oleh mahasiswa Teknologi Pendidikan Universitas Negeri Yogyakarta (UNY). Pameran ini menampilkan berbagai karya media pembelajaran yang inovatif dan kreatif</p>
 
 
             </div>
             <br></br>
             <div className='content-wrapper'>
-              <h1 className='gredupedia-5' data-aos="fade-right">Gredupedia 5</h1>
+              <h1 className='gredupedia-5' style={{color:"#F28F00"}} data-aos="fade-right">Gredupedia 5</h1>
               <p data-aos="fade-right"> Memasuki tahun ke-5 penyelanggaraan, Gredupedia Kembali hadir sebagai wadah eksplorasi 
 mahasiswa serta kontribusinya untuk dunia Pendidikan Indonesia. Kali ini, Gredupedia 
 Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembrani" kita akan ditemani Nala dan Kuda Sembrani dalam perjalanannya berkelana untuk memahami dan mengenal tentang Pendidikan Budaya Jawa
@@ -266,6 +266,22 @@ Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembran
         </div>
 
         <div style={{bottom:0}} className='shadow-overlay'></div>
+      </div>
+
+      <div id='location'>
+        <div className='location-content'>
+        <div data-aos="fade-up"  className='location-map'>
+         
+         <iframe height="250px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.451927674791!2d110.36715900450247!3d-7.800003111308953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a578614472d91%3A0x13cb03c951e9b2f8!2sTaman%20Budaya%20Yogyakarta!5e0!3m2!1sen!2sid!4v1731865153263!5m2!1sen!2sid" allowFullScreen="true"  referrerPolicy="no-referrer-when-downgrade"/>
+         </div>
+         <div data-aos="fade-right" className='location-description'>
+                   <h3>Offline Event at</h3>
+                   <h1>Taman Budaya Yogyakarta</h1>
+                   <h3>19 - 21 December 2024</h3>
+         </div>
+        </div>
+      
+
       </div>
 
 
@@ -326,12 +342,15 @@ Kembali dengan wajah baru, mengangkat tajuk "Time Travel : Nala dan Kuda Sembran
 
       <div className='project-container'>
           <div className='project-header'>
-              <div>
+            <div>
+                  
                 <h1><span>300+</span> PRODUK KARYA</h1>
-                <p>dari para Teknolog Pendidikan</p>
-                <br></br>
-                <button className='main-button'>Pelajari Lebih Lanjut</button>
-              </div>
+                    <p>dari para Teknolog Pendidikan</p>
+                    <br></br>
+                    <button className='main-button'>Pelajari Lebih Lanjut</button>
+              
+            </div>
+            
 
 
           </div>

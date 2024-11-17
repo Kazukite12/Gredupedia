@@ -1,7 +1,7 @@
 const AccordionData = [
     {
-        question:"Question 1",
-        answer:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lectus nibh, aliquet eu neque ac, volutpat sodales risus. Pellentesque"
+        question:"Dimana lokasi pameran gredupedia?",
+        answer:"Gredupedia tahun ke-5 akan berlokasi di "
     },
     {
         question:"Question 2",
