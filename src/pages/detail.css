@@ -66,37 +66,30 @@
 }
 
 @media (max-width:879px) {
-    .detail-container {
-        
-        width: 95%;
-    }
-}
-
-@media (max-width:655px) {
-    #detail {
+    #detail{
         height: max-content;
     }
-
     .detail-container {
-        width: 80%;
-        flex-direction: column;
-        padding: 5px 20px 30px 20px;
-    }
-
-    .detail-image-container {
-        height: max-content;
         width: 100%;
+         flex-direction: column;
+         padding: 5px 10px 30px 10px;
+         gap: 50px;
     }
 
     .detail-description-container {
-        height: 50%;
         width: 90%;
-        text-align: justify;
+    }
+
+    .detail-image-container {
+        width: 90%;
     }
 }
 
 
+
+
 @media (max-width:480px) {
+    #detail{height: max-content;}
     .detail-container {
         width: 100%;
          flex-direction: column;
